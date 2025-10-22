@@ -14,7 +14,7 @@ export default function Header() {
       <div className="bg-[#3c3c3c] text-white rounded-xl mx-4 md:mx-8 mt-4 md:mt-8 px-1 md:px-8 py-4 relative">
         
         {/* Top Right Icons */}
-        <div className="absolute right-4 top-2 hidden md:flex gap-6 text-sm items-center">
+        <div className="absolute right-4 top-[-6px] hidden md:flex gap-6 text-sm items-center">
           <div className="flex items-center gap-2 cursor-pointer group">
             <img src="/iamge/head-email-img.webp" alt="Email" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
             <span className="group-hover:text-[#2f92ff] transition">info@bloopsdesign.com</span>

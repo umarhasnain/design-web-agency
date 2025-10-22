@@ -7,7 +7,7 @@ import Footer from "../components/Home-footer";
 
 const ContactSection: React.FC = () => {
   return (
-    <><section className="relative w-full bg--to-r from-gray-100 to-green-100 py-30 px-8 flex flex-col md:flex-row items-center justifycontant-center overflow-hidden">
+    <><section className="relative w-full bg--to-r from-green-500 to-green-100 py-30 px-8 flex flex-col md:flex-row items-center justifycontant-center overflow-hidden">
 
           {/* Left Side Text */}
           <div className="md:w-1/2 space-y-4">
