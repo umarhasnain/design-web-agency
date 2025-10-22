@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
-import Awards from "../components/Awards";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
-import Herosection from "../components/portfolio/Herosection";
+import Awards from "../components/Home-awards";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
+import Herosection from "../components/portfolio/Portfolio-herosection";
 
 
 const categories = [

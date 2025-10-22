@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Components
-import Brand2 from "../components/Brand2";
-import LOgoslider2 from "../components/LOgoslider2";
-import StatsSection from "../components/Hitting";
-import Package2 from "../components/Package2";
-import Port2 from "../components/Port2";
-import WorkProcess from "../components/Process";
-import Testimonials from "../components/Testimonial";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
+import Brand2 from "../components/Service-text2";
+import LOgoslider2 from "../components/Service-brand";
+import StatsSection from "../components/HomeHitting";
+import Package2 from "../components/Service-package2";
+import Port2 from "../components/Service-bar2";
+import WorkProcess from "../components/Home-process";
+import Testimonials from "../components/Home-testimonial";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
 import CTASection from "../components/Footer2";
-import Footer from "../components/Footer";
+import Footer from "../components/Home-footer";
 
 export default function HeroSection() {
   const [isFormOpen, setIsFormOpen] = useState(false);

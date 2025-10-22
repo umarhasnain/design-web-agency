@@ -1,33 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Awards from "../components/Awards";//
-// import ContactForm from "../components/Form";
-// import AnimatedContact from "../components/Contact";
-// import Footer from "../components/Footer";
-
-
-
 
 const categories = [
-  "Logo Design",
+  "Logo",
   "Web Design",
   "Video Animation",
   "Branding",
   "E-Commerce",
-  "Social Marketing",
-  "NFT Design",
+  "Social marketing",
+  "NFT",
   "Marketing Collateral",
   "SEO",
 ];
 
-// ✅ Dummy data for each category
-const packagesData: Record<string, any[]> = {
-  "Logo Design": [
+const packagesData: Record<
+  string,
+  { price: string; title: string; features: string[] }[]
+> = {
+   "Logo": [
     {
       price: "$49",
       title: "Basic Logo",
@@ -275,10 +268,7 @@ const packagesData: Record<string, any[]> = {
         "Voice - Over &amp; Sound Effects",
         "Unlimited Revisions",
         "4 weeks Delivery",
-        "",
-        "",
-        "",
-        "",
+       
       ],
     },
     {
@@ -693,7 +683,7 @@ const packagesData: Record<string, any[]> = {
       ],
     },
   ],
-  "": [
+  "Social marketing": [
     {
       price: "$999",
       title: "E-commerce-website",
@@ -1066,9 +1056,7 @@ const packagesData: Record<string, any[]> = {
         "500 followers on Instagram",
         "Bi-monthly Analytic Report-KPI Comparison &amp; more",
         "Dedicated Account Manager",
-        "",
-        "",
-        "",
+       
       ],
     },
     {
@@ -1099,7 +1087,7 @@ const packagesData: Record<string, any[]> = {
       ],
     },
   ],
-  "NFT Design": [
+  "NFT": [
     {
       price: "$299",
       title: "NFT LABS LITE",
@@ -1287,117 +1275,97 @@ const packagesData: Record<string, any[]> = {
   ],
 };
 
-const FeatureRow: React.FC<{ text: string }> = ({ text }) => (
-  <li className="flex items-center gap-3">
-     <span>{text}</span>
-  </li>
-);
-
-const PricingSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+const PricingSection = () => {
+  const [active, setActive] = useState("Logo");
+  const activePackages = packagesData[active] || [];
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3500,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
-  const packages = packagesData[activeCategory] || [];
-
   return (
-    <>
- 
-    <section className="py-16 bg-gradient-to-b from-white to-blue-50">
+    <section className="bg-[#f7f9fc] py-14 sm:py-16 md:py-20 flex flex-col items-center px-4 sm:px-6 lg:px-10 xl:px-20">
       {/* Heading */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Most Affordable Packages
-        </h2>
-        <p className="text-gray-600 mt-2">
-          We are well aware of the competition. That is the reason why we have a fair pricing model.
-We ensure quality over quantity on each order.
-        </p>
+      <h2 className="text-center text-2xl sm:text-3xl lg:text-[42px] font-bold text-gray-900 mb-3">
+        Most Affordable Packages
+      </h2>
+      <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mb-10 leading-relaxed">
+        We are well aware of the competition. That is the reason why we have a fair pricing model.
+        <br />
+        We ensure quality over quantity on each order.
+      </p>
 
-        {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          {categories.map((cat, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1 rounded-full text-sm font-medium border transition ${cat === activeCategory
-                  ? "bg-blue-500 text-white border-blue-500"
-                  : "text-gray-700 border-gray-300 hover:bg-blue-100"}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* Category Buttons */}
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-12 w-full max-w-4xl">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActive(cat)}
+            className={`px-4 sm:px-5 md:px-6 py-2 rounded-full text-xs sm:text-sm md:text-base font-medium border transition-all duration-200 ${
+              active === cat
+                ? "bg-[#00AEEF] text-white border-[#00AEEF]"
+                : "bg-white text-black border border-gray-300 hover:bg-gray-200"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
 
-      {/* Packages Slider */}
-      <div className="max-w-6xl mx-auto m-4 px-4">
+      {/* Slider Section */}
+      <div className="w-full max-w-7xl">
         <Slider {...settings}>
-          {packages.map((pkg, idx) => (
-            <motion.div 
-            key={idx}
-              whileHover={{ y: -8 }}
-              className="bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-2xl shadow-lg p-6 flex flex-col  gap-1 "
-            >
-              <h3 className="text-4xl font-bold">{pkg.price}</h3>
-              <p className="text-lg mt-1">{pkg.title}</p>
+          {activePackages.map((pkg, index) => (
+            <div key={index} className="p-3">
+              <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-[#0072FF] to-[#00C6FF] text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] group flex flex-col justify-between min-h-[520px]">
+                <div className="p-2 sm:p-4 md:p-6 text-center flex flex-col flex-grow">
+                  <h3 className="text-4xl sm:text-5xl font-extrabold mb-2">
+                    {pkg.price}
+                  </h3>
+                  <h4 className="text-base sm:text-lg md:text-xl font-semibold mb-4">
+                    {pkg.title}
+                  </h4>
 
-              {/* Scrollable Features */}
-              <ul
-                className="mt-4 mb-4 space-y-2 flex-1 overflow-y-auto pr-2 custom-scroll"
-                style={{ maxHeight: "190px" }}
-              >
-                {pkg.features.map((f: string, i: number) => (
-                  <FeatureRow key={i} text={f} />
-                ))}
-              </ul>
+                  {/* Scrollable Features */}
+                  <ul className="text-xs sm:text-sm md:text-base text-white/90 border-t border-white/30 divide-y divide-white/20 pt-4 max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/30">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="py-2 flex items-start gap-2">
+                        <span>✔</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-              <button className="mt-6 bg-white text-blue-600 font-semibold py-2 px-2 m-2 rounded-md hover:bg-gray-100 transition">
-                ORDER NOW
-              </button>
-              <a
-                href="#"
-                className="mt-2 inline-flex items-center gap-2 text-sm underline"
-              >
-                <span>Click here to</span> Live Chat
-                <ArrowRight size={15} />
-              </a>
-            </motion.div>
+                  {/* Buttons */}
+                  <div className="mt-6 flex flex-col items-center gap-2">
+                    <button className="bg-white text-[#0072FF] font-semibold py-2 px-6 sm:px-8 rounded-full hover:bg-[#f0f0f0] transition text-sm sm:text-base">
+                      ORDER NOW
+                    </button>
+                    <p className="text-white text-xs sm:text-sm">
+                      Click Here to{" "}
+                      <a href="#" className="underline font-medium">
+                        Live Chat
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                {/* <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition duration-300"></div> */}
+              </div>
+            </div>
           ))}
         </Slider>
       </div>
-
-      {/* Custom Scrollbar */}
-      <style jsx global>{`
-        .custom-scroll::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-          background: #9ca3af;
-          border-radius: 9999px;
-        }
-        .custom-scroll::-webkit-scrollbar-track {
-          background: transparent;
-        }
-      `}</style>
-    </section><div>
-        {/* <Awards/>/ */}
-        {/* <ContactForm/>/ */}
-        {/* <AnimatedContact/> */}
-        {/* <Footer/> */}
-     
-      </div></>
+    </section>
   );
 };
 

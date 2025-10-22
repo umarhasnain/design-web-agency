@@ -77,7 +77,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       className="relative w-full py-20 bg-cover bg-center text-white"
-      style={{ backgroundImage: "url('/images/testimonial-bg.jpg')" }}
+      style={{ backgroundImage: "url('/iamge/testimonial-banner.webp')" }}
     >
       <div className="max-w-5xl mx-auto px-6 text-center">
         {/* Heading */}

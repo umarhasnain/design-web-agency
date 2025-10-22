@@ -1,23 +1,46 @@
-import React from 'react'
-import PricingSection from '../components/PackagesData'
-import Herosection from '../components/portfolio/Herosection'
-import Awards from '../components/Awards'
-import ContactForm from '../components/Form'
-import AnimatedContact from '../components/Contact'
-import Footer from '../components/Footer'
+'use client'
+import React from 'react';
+import Awards from '../components/Home-awards';
+import ContactForm from '../components/Home-form';
+import AnimatedContact from '../components/Home-contact';
+import Footer from '../components/Home-footer';
+import PricingSection from '../components/Home-package';
 
-const page = () => {
+const HeroSection: React.FC = () => {
   return (
-    <div>
-      <Herosection/>
-      <PricingSection/>
-      <Awards/>
-      <ContactForm/>
-      <AnimatedContact/>
-      <Footer/>
-    </div>
-  )
-}
+    <>
+      {/* ---------- HERO SECTION START ---------- */}
+      <section
+        className="relative w-full h-[600px] bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/iamge/pricing-page-banner (1).jpg')", // ✅ Make sure your image is in public/image/
+        }}
+      >
+        {/* Overlay (optional dark layer) */}
+        {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
 
-export default page
+        {/* Center Content */}
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-white text-3xl md:text-5xl mt-[-30px] font-bold leading-tight">
+           MOST AFFORDABLE <br />
+PACKAGES FOR ALL <br />
+OUR CUSTOMERS <br />
+          </h1>
+          <p className="text-white text-lg mt-4 max-w-xl mx-auto">
+           
+          </p>
+        </div>
+      </section>
+      {/* ---------- HERO SECTION END ---------- */}
 
+      {/* Other sections */}
+      <PricingSection />
+      <Awards />
+      <ContactForm />
+      <AnimatedContact />
+      <Footer />
+    </>
+  );
+};
+
+export default HeroSection;

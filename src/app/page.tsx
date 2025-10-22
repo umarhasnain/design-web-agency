@@ -1,24 +1,21 @@
 
 // import header from "./components/Header";/
 
-import Awards from "./components/Awards";
-import Contact from "./components/Contact";
+import Awards from "./components/Home-awards";
+import Contact from "./components/Home-contact";
 import Coursol from "./components/Coursol";
-import Digital from "./components/Digital";
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import Header from "./components/Header";
-// import Slider from "./components/Herosection";/
-import Herosection from "./components/Herosection";
-import StatsSection from "./components/Hitting";
-import Mostpackage from "./components/Mostpackage";
-// import Hitting from "./components/Hitting";/
-import Package from "./components/Package";
-import PackagesData from "./components/PackagesData";
-import Portfolio from "./components/Portfolio";
-import Process from "./components/Process";
-import Testimonial from "./components/Testimonial";
-import Text from "./components/Text";
+import Digital from "./components/Home-digital";
+import Footer from "./components/Home-footer";
+import Form from "./components/Home-form";
+import Mostpackage from "./components/Home-package";
+import Package from "./components/Home-2package";
+import Portfolio from "./components/Home-video-animtion";
+import Portfolio1 from "./components/Home-work";
+import Process from "./components/Home-process";
+import Testimonial from "./components/Home-testimonial";
+import Text from "./components/Home-text";
+import Herosection from "./components/portfolio/Portfolio-herosection";
+import HeroSection from "./components/Home-herosection";
 // import ServicesGrid from "./service/page";/
 
 
@@ -32,25 +29,20 @@ export default function () {
   return (
     <div>
 
-      {/* <Header/> */}
-      <Herosection />
+   <HeroSection/>
       <Text />
-      {/* <Slider/>  */}
       <Coursol />
       <Mostpackage/>
-      {/* <PackagesData /> */}
       <Package />
-      {/* <Hitting/> */}
       <Process />
       < Awards />
-      <Portfolio />
+      <Portfolio1/>
       <Digital />
       <Testimonial />
       < Form />
       <Contact />
-      {/* <StatsSection/>/ */}
       <Footer />
-      {/* <ServicesGrid/> */}
+
 
 
 

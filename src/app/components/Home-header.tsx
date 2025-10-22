@@ -16,15 +16,15 @@ export default function Header() {
         {/* Top Right Icons */}
         <div className="absolute right-4 top-2 hidden md:flex gap-6 text-sm items-center">
           <div className="flex items-center gap-2 cursor-pointer group">
-            <img src="/icons/email.png" alt="Email" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
+            <img src="/iamge/head-email-img.webp" alt="Email" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
             <span className="group-hover:text-[#2f92ff] transition">info@bloopsdesign.com</span>
           </div>
           <div className="flex items-center gap-2 cursor-pointer group">
-            <img src="/icons/phone.png" alt="Phone" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
+            <img src="/iamge/head-phone-img.webp" alt="Phone" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
             <span className="group-hover:text-[#2f92ff] transition">(313) 512-9347</span>
           </div>
           <div className="flex items-center gap-2 cursor-pointer group">
-            <img src="/icons/chat.png" alt="Chat" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
+            <img src="/iamge/chat-img-1.webp" alt="Chat" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
             <span className="group-hover:text-[#2f92ff] transition">Live Chat</span>
           </div>
         </div>

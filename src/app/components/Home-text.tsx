@@ -4,13 +4,13 @@ import React, { useState, useEffect } from 'react';
 
 const AnimatedSection: React.FC = () => {
   const [index, setIndex] = useState(0);
-  const text = "DESIGN"; 
+  const text = "DESIGN";
   const letters = text.split("");
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % (letters.length + 1));
-    }, 400); 
+    }, 400);
     return () => clearInterval(interval);
   }, [letters.length]);
 
@@ -19,9 +19,9 @@ const AnimatedSection: React.FC = () => {
       style={{
         display: 'flex',
         flexDirection: 'row',
+        flexWrap: 'wrap',
         minHeight: '80vh',
         background: '#fff',
-        flexWrap: 'wrap',
       }}
     >
       {/* ✅ Left Side Animated Vertical Text */}
@@ -37,6 +37,7 @@ const AnimatedSection: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           flexShrink: 0,
+          width: 'auto',
         }}
       >
         {letters.map((letter, i) => (
@@ -44,7 +45,7 @@ const AnimatedSection: React.FC = () => {
             key={i}
             style={{
               display: 'block',
-              opacity: i < index ? 1 : 0, // ✅ Sirf left letters animate honge
+              opacity: i < index ? 1 : 0,
               transition: 'opacity 0.3s ease',
             }}
           >
@@ -53,7 +54,7 @@ const AnimatedSection: React.FC = () => {
         ))}
       </div>
 
-      {/* ✅ Right Side Static Content (No Animation) */}
+      {/* ✅ Right Side Static Content */}
       <div
         style={{
           flex: 1,
@@ -72,8 +73,8 @@ const AnimatedSection: React.FC = () => {
             marginBottom: '20px',
             color: '#444245',
             lineHeight: 1.2,
-            marginRight:'80px',
-            marginTop:'2px',
+            marginRight: '80px',
+            marginTop: '2px',
           }}
         >
           Conceptualization, Transformation And <br /> Creativity <br />
@@ -85,7 +86,7 @@ const AnimatedSection: React.FC = () => {
             maxWidth: '700px',
             color: '#555',
             lineHeight: 1.6,
-            marginRight:'80px',
+            marginRight: '80px',
           }}
         >
           We possess experience of more than a decade and we shape your brand
@@ -95,6 +96,51 @@ const AnimatedSection: React.FC = () => {
           present brand, we are here for you.
         </p>
       </div>
+
+      {/* ✅ Responsive CSS */}
+      <style>{`
+        @media (max-width: 1024px) {
+          h1 {
+            font-size: 32px !important;
+            margin-right: 0 !important;
+          }
+          p {
+            font-size: 18px !important;
+            margin-right: 0 !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          div[style*='writing-mode'] {
+            writing-mode: horizontal-tb !important;
+            transform: rotate(0deg) !important;
+            font-size: 10vw !important;
+            width: 100% !important;
+            justify-content: center !important;
+            margin-bottom: 20px !important;
+          }
+          h1 {
+            font-size: 26px !important;
+            margin-right: 0 !important;
+            text-align: center !important;
+          }
+          p {
+            font-size: 16px !important;
+            max-width: 100% !important;
+            margin-right: 0 !important;
+            text-align: center !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 22px !important;
+          }
+          p {
+            font-size: 15px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

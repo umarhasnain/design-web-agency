@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
 
 const ContactSection: React.FC = () => {
   return (

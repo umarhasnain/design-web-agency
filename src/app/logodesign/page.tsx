@@ -1,18 +1,18 @@
 'use client'
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import AnimatedSection from "../components/page";
-import StatsSection from "../components/Hitting";
-import Logotypesslider from "../components/Logotypesslider";
-import Packages1 from "../components/Packages1";
-import PackagesTailwind from "../components/Packages1";
+import AnimatedSection from "../components/Service-text";
+import StatsSection from "../components/HomeHitting";
+import Logotypesslider from "../components/Service-logodesign";
+import Packages1 from "../components/Service-packages1";
+import PackagesTailwind from "../components/Service-packages1";
 import Card1 from "../components/Portone";
 import Portone from "../components/Portone";
-import Work from "../components/Work";
-import Testimonials from "../components/Testimonial";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
+import Work from "../components/Servicenft-work";
+import Testimonials from "../components/Home-testimonial";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
 // import Testimonials from "../components/Testimonial";
 
 export default function HeroSection() {

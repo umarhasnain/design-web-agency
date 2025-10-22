@@ -13,7 +13,7 @@
 //   ];
 
 import { Sliders } from "lucide-react";
-import Slider from "../Herosection";
+import Slider from "../Home-herosection";
 
 //   const coreValues = [
 //     {

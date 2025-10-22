@@ -1,19 +1,19 @@
 'use client'
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Page1 from "../components/Brand";
-import Brand from "../components/Brand";
-import LOgoslider2 from "../components/LOgoslider2";
-import StatsSection from "../components/Hitting";
-import Package2 from "../components/Package2";
+import Page1 from "../components/Service-text1";
+import Brand from "../components/Service-text1";
+import LOgoslider2 from "../components/Service-brand";
+import StatsSection from "../components/HomeHitting";
+import Package2 from "../components/Service-package2";
 import Footer2 from "../components/Footer2";
 import CTASection from "../components/Footer2";
-import Port2 from "../components/Port2";
-import WorkProcess from "../components/Process";
-import ContactForm from "../components/Form";
-import Testimonials from "../components/Testimonial";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
+import Port2 from "../components/Service-bar2";
+import WorkProcess from "../components/Home-process";
+import ContactForm from "../components/Home-form";
+import Testimonials from "../components/Home-testimonial";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
 
 export default function HeroSection() {
   useEffect(() => {

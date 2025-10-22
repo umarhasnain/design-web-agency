@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Components
-import Brand2 from "../components/Brand2";
-import LOgoslider2 from "../components/LOgoslider2";
+import Brand2 from "../components/Service-text2";
+import LOgoslider2 from "../components/Service-brand";
 import L0goslider3 from "../components/L0goslider3";
-import Brand3 from "../components/Brand3";
-import StatsSection from "../components/Package";
-import Packeges3 from "../components/Packeges3";
+import Brand3 from "../components/Service-text3";
+import StatsSection from "../components/Home-2package";
+import Packeges3 from "../components/Service-packeges3";
 import CTASection from "../components/Footer2";
-import Port3 from "../components/Port3";
-import Testimonials from "../components/Testimonial";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
-import Video from "../components/Video";
-import Brand4 from "../components/Brand4";
-import LOgoslider4 from "../components/LOgoslider4";
-import Packeages4 from "../components/Packeages4";
-import Crad3 from "../components/Crad3";
-import MajorFeatures from "../components/Major";
+import Port3 from "../components/Service-bar3";
+import Testimonials from "../components/Home-testimonial";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
+import Video from "../components/Home-video";
+import Brand4 from "../components/Service-text4";
+import LOgoslider4 from "../components/Service-vedeo-animation";
+import Packeages4 from "../components/Service-packeages4";
+import Crad3 from "../components/Service-animation-process";
+import MajorFeatures from "../components/Service-animation-card";
 
 export default function HeroSection() {
   const [isFormOpen, setIsFormOpen] = useState(false);

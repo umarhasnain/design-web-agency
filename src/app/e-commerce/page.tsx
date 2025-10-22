@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Components
-import Brand2 from "../components/Brand2";
-import LOgoslider2 from "../components/LOgoslider2";
-import L0goslider3 from "../components/L0goslider3";
-import Brand3 from "../components/Brand3";
-import StatsSection from "../components/Package";
-import Packeges3 from "../components/Packeges3";
+import Brand2 from "../components/Service-text2";
+import LOgoslider2 from "../components/Service-brand";
+// import L0goslider3 from "../components/L0goslider3";
+import Brand3 from "../components/Service-text3";
+import StatsSection from "../components/Home-2package";
+import Packeges3 from "../components/Service-packeges3";
 import CTASection from "../components/Footer2";
-import Port3 from "../components/Port3";
-import Testimonials from "../components/Testimonial";
-import ContactForm from "../components/Form";
-import AnimatedContact from "../components/Contact";
-import Footer from "../components/Footer";
+import Port3 from "../components/Service-bar3";
+import Testimonials from "../components/Home-testimonial";
+import ContactForm from "../components/Home-form";
+import AnimatedContact from "../components/Home-contact";
+import Footer from "../components/Home-footer";
 
 export default function HeroSection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -290,7 +290,7 @@ export default function HeroSection() {
 
       {/* 🔽 Additional Sections */}
       <Brand3 />
-      <L0goslider3 />
+      {/* <L0goslider3 /> */}
       <StatsSection/>
       <Packeges3/>
       <CTASection/>
