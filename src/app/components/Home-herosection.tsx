@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, CSSProperties } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const slides = [
   '/iamge/slider-img-1.webp',
@@ -19,37 +21,47 @@ const Slider: React.FC = () => {
     "CONNECT WITH YOUR AUDIENCE",
   ];
 
-  // ✅ Auto-slide every 3 seconds
+  // Initialize AOS once
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false, // repeat animation on scroll
+    });
+  }, []);
+
+  // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 2) % slides.length);
+      setCurrent(prev => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Text animation every 2.5 sec
+  // Text animation every 2.5 sec
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextIndex((prev) => (prev + 2) % texts.length);
+      setTextIndex(prev => (prev + 1) % texts.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 2) % slides.length);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrent(prev => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent(prev => (prev - 1 + slides.length) % slides.length);
 
-  // ---------- Styles ----------
+  // Styles
   const container: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column', // 👈 Niche text dikhane ke liye
+    flexDirection: 'column',
     height: '100vh',
     width: '100vw',
     position: 'relative',
     overflow: 'hidden',
     margin: 0,
     padding: 0,
+    backgroundColor: '#000',
   };
 
   const arrowStyle: CSSProperties = {
@@ -57,7 +69,7 @@ const Slider: React.FC = () => {
     color: '#fff',
     cursor: 'pointer',
     padding: '20px',
-    zIndex: 2,
+    zIndex: 5,
     userSelect: 'none',
     position: 'absolute',
     top: '50%',
@@ -99,6 +111,7 @@ const Slider: React.FC = () => {
     marginTop: '20px',
     textAlign: 'center',
     color: '#fff',
+    minHeight: '70px', // maintain height for smooth fade
   };
 
   const headingStyle: CSSProperties = {
@@ -128,33 +141,56 @@ const Slider: React.FC = () => {
   return (
     <div style={container}>
       {/* Left Arrow */}
-      <div onClick={prevSlide} style={leftArrow}>
+      <div onClick={prevSlide} style={leftArrow} data-aos="fade-right" data-aos-duration="600">
         &#8592;
       </div>
 
       {/* Main Image Wrapper */}
       <div style={imageWrapper}>
-        <img src="/laptop-img.webp" alt="Laptop Frame" style={laptopImageStyle} />
-        <img src={slides[current]} alt={`Slide ${current + 1}`} style={screenImageStyle} />
+        <img
+          src="/laptop-img.webp"
+          alt="Laptop Frame"
+          style={laptopImageStyle}
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        />
+        <img
+          src={slides[current]}
+          alt={`Slide ${current + 1}`}
+          style={screenImageStyle}
+          key={current} // re-render to retrigger animation
+          data-aos="zoom-in"
+          data-aos-duration="800"
+          data-aos-delay="400"
+        />
       </div>
 
       {/* Right Arrow */}
-      <div onClick={nextSlide} style={rightArrow}>
+      <div onClick={nextSlide} style={rightArrow} data-aos="fade-left" data-aos-duration="600">
         &#8594;
       </div>
 
-      {/* ✅ Text Section */}
+      {/* Text Section */}
       <div style={textWrapper}>
-        <h1 style={headingStyle} key={textIndex}>
+        <h1
+          style={headingStyle}
+          key={textIndex}
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="600"
+        >
           {texts[textIndex]}
         </h1>
-        <p style={subTextStyle}>
+        <p style={subTextStyle} data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
           We develop a strong brand identity that connects with your audience!
         </p>
-        <button style={buttonStyle}>Read More</button>
+        <button style={buttonStyle} data-aos="zoom-in" data-aos-duration="700" data-aos-delay="900">
+          Read More
+        </button>
       </div>
     </div>
   );
 };
 
-export default Slider
+export default Slider;
