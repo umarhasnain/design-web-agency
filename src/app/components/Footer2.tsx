@@ -19,7 +19,7 @@ const CTASection = () => {
           <FaPhoneAlt className="text-2xl" />
           <div>
             <p className="text-sm  text-black uppercase">Call us at</p>
-            <p className="font-medium text-black">+1 (647) 699-1240</p>
+            <p className="font-medium text-black">+1 (302) 280-8595</p>
           </div>
         </div>
 

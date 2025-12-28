@@ -6,7 +6,7 @@ import { useState } from "react";
 // Components
 import Brand2 from "../components/Service-text2";
 import LOgoslider2 from "../components/Service-brand";
-import L0goslider3 from "../components/L0goslider3";
+// import L0goslider3 from "../components/L0goslider3";
 import Brand3 from "../components/Service-text3";
 import StatsSection from "../components/Home-2package";
 import Packeges3 from "../components/Service-packeges3";
@@ -18,7 +18,7 @@ import AnimatedContact from "../components/Home-contact";
 import Footer from "../components/Home-footer";
 import Video from "../components/Home-video";
 import Brand4 from "../components/Service-text4";
-import LOgoslider4 from "../components/Service-vedeo-animation";
+// import LOgoslider4 from "../components/Service-vedeo-animation";
 import Packeages4 from "../components/Service-packeages4";
 import Crad3 from "../components/Service-animation-process";
 import MajorFeatures from "../components/Service-animation-card";

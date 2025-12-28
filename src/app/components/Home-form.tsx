@@ -9,7 +9,7 @@ const ContactForm: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 via-purple-900 to-white bg-clip-text text-transparent">
             Get In Touch With Us
           </h2>
           <p className="text-gray-600 mt-2">
@@ -21,16 +21,16 @@ const ContactForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left Info */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-white bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-500 via-purple-900 to-white bg-clip-text text-transparent">
               Let’s Talk.
             </h3>
 
             <div className="flex items-start space-x-4">
-              <Phone className="text-cyan-500 w-6 h-6 mt-1" />
+              <Phone className="text-purple-500 w-6 h-6 mt-1" />
               <div>
                 <p className="text-xs uppercase text-gray-500">Call Us At</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                  (313) 512-9347
+                <p className="text-lg font-bold bg-gradient-to-r from-purple-900 via-purple-900 to-purple-800 bg-clip-text text-transparent">
+                  (302) 280-8595
                 </p>
               </div>
             </div>
@@ -41,10 +41,10 @@ const ContactForm: React.FC = () => {
             </p>
 
             <div className="flex items-start space-x-4">
-              <MessageCircle className="text-cyan-500 w-6 h-6 mt-1" />
+              <MessageCircle className="text-purple-500 w-6 h-6 mt-1" />
               <div>
                 <p className="text-xs uppercase text-gray-500">Let’s Chat Now</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                <p className="text-lg font-bold bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 bg-clip-text text-transparent">
                   Live Chat
                 </p>
               </div>

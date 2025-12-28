@@ -21,16 +21,16 @@ const Slider: React.FC = () => {
     "CONNECT WITH YOUR AUDIENCE",
   ];
 
-  // Initialize AOS once
+  /* AOS INIT */
   useEffect(() => {
     AOS.init({
       duration: 800,
       easing: 'ease-in-out',
-      once: false, // repeat animation on scroll
+      once: false,
     });
   }, []);
 
-  // Auto-slide every 4 seconds
+  /* IMAGE SLIDE */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % slides.length);
@@ -38,7 +38,7 @@ const Slider: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Text animation every 2.5 sec
+  /* TEXT SLIDE */
   useEffect(() => {
     const interval = setInterval(() => {
       setTextIndex(prev => (prev + 1) % texts.length);
@@ -49,19 +49,18 @@ const Slider: React.FC = () => {
   const nextSlide = () => setCurrent(prev => (prev + 1) % slides.length);
   const prevSlide = () => setCurrent(prev => (prev - 1 + slides.length) % slides.length);
 
-  // Styles
+  /* ================= STYLES ================= */
+
   const container: CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    height: '100vh',
-    width: '100vw',
+    minHeight: '100vh',
+    width: '100%',
     position: 'relative',
     overflow: 'hidden',
-    margin: 0,
-    padding: 0,
     backgroundColor: '#000',
+
+    /* 🔥 MAIN FIX */
+    paddingTop: '140px', // header height space
+    boxSizing: 'border-box',
   };
 
   const arrowStyle: CSSProperties = {
@@ -72,26 +71,21 @@ const Slider: React.FC = () => {
     zIndex: 5,
     userSelect: 'none',
     position: 'absolute',
-    top: '50%',
+    top: '55%',
     transform: 'translateY(-50%)',
   };
 
-  const leftArrow = { ...arrowStyle, left: '10px' };
-  const rightArrow = { ...arrowStyle, right: '10px' };
-
   const imageWrapper: CSSProperties = {
     position: 'relative',
-    width: '80%',
-    maxWidth: '800px',
-    textAlign: 'center',
+    width: '100%',
+    maxWidth: '900px',
+    margin: '0 auto',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
   };
 
   const laptopImageStyle: CSSProperties = {
     width: '60%',
-    maxWidth: '60%',
     height: 'auto',
     zIndex: 1,
   };
@@ -108,14 +102,14 @@ const Slider: React.FC = () => {
   };
 
   const textWrapper: CSSProperties = {
-    marginTop: '20px',
+    marginTop: '25px',
     textAlign: 'center',
     color: '#fff',
-    minHeight: '70px', // maintain height for smooth fade
+    minHeight: '90px',
   };
 
   const headingStyle: CSSProperties = {
-    fontSize: '28px',
+    fontSize: '32px',
     fontWeight: 'bold',
     transition: 'opacity 0.5s ease-in-out',
   };
@@ -127,69 +121,59 @@ const Slider: React.FC = () => {
   };
 
   const buttonStyle: CSSProperties = {
-    marginTop: '15px',
-    padding: '10px 20px',
-    fontSize: '16px',
+    marginTop: '18px',
+    padding: '12px 26px',
+    fontSize: '15px',
     fontWeight: 'bold',
-    backgroundColor: '#fff',
-    color: '#000',
+    backgroundColor: '#5e0e9a',
+    color: '#fff',
     border: 'none',
-    borderRadius: '20px',
+    borderRadius: '30px',
     cursor: 'pointer',
   };
 
   return (
-    <div style={container}>
-      {/* Left Arrow */}
-      <div onClick={prevSlide} style={leftArrow} data-aos="fade-right" data-aos-duration="600">
+    <section className='mt-[-130px] py-6' style={container}>
+      {/* LEFT ARROW */}
+      <div onClick={prevSlide} style={{ ...arrowStyle, left: '15px' }} data-aos="fade-right">
         &#8592;
       </div>
 
-      {/* Main Image Wrapper */}
+      {/* IMAGE */}
       <div style={imageWrapper}>
         <img
           src="/laptop-img.webp"
-          alt="Laptop Frame"
+          alt="Laptop"
           style={laptopImageStyle}
           data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="200"
         />
         <img
           src={slides[current]}
-          alt={`Slide ${current + 1}`}
+          alt="Slide"
           style={screenImageStyle}
-          key={current} // re-render to retrigger animation
+          key={current}
           data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="400"
         />
       </div>
 
-      {/* Right Arrow */}
-      <div onClick={nextSlide} style={rightArrow} data-aos="fade-left" data-aos-duration="600">
+      {/* RIGHT ARROW */}
+      <div onClick={nextSlide} style={{ ...arrowStyle, right: '15px' }} data-aos="fade-left">
         &#8594;
       </div>
 
-      {/* Text Section */}
+      {/* TEXT */}
       <div style={textWrapper}>
-        <h1
-          style={headingStyle}
-          key={textIndex}
-          data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-delay="600"
-        >
+        <h1 key={textIndex} style={headingStyle} data-aos="fade-up">
           {texts[textIndex]}
         </h1>
-        <p style={subTextStyle} data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
+        <p style={subTextStyle} data-aos="fade-up">
           We develop a strong brand identity that connects with your audience!
         </p>
-        <button style={buttonStyle} data-aos="zoom-in" data-aos-duration="700" data-aos-delay="900">
+        <button style={buttonStyle} data-aos="zoom-in">
           Read More
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

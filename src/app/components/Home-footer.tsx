@@ -35,14 +35,14 @@ const Footer: React.FC = () => {
           <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-cyan-400" /> info@bloopsdesign.com
+              <Mail className="w-4 h-4 text-cyan-400" /> info@designswebagency.com
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-cyan-400" /> (313) 512-9347
+              <Phone className="w-4 h-4 text-cyan-400" /> (302) 280-8595
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-cyan-400" /> 
-              200 Kensington Rd Apt 64, Taylors, SC 29687
+              8 The Green B, Dover Delaware, 19901
             </li>
           </ul>
 
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Bloops Design. All Rights Reserved.
+        © {new Date().getFullYear()} Designs Web Agency. All Rights Reserved.
       </div>
     </footer>
   );
